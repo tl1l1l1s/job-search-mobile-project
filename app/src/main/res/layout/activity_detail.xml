@@ -40,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="회사 공고 제목"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
 
             <ImageButton
@@ -64,6 +65,7 @@
                     android:layout_height="wrap_content"
                     android:text="D - 6"
                     android:textAlignment="textEnd"
+                    android:textColor="@color/deepBlue"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -95,6 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="회사명(**사)"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
 
                 <Space
@@ -107,6 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="업종"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -140,6 +144,7 @@
                         android:layout_marginLeft="10dp"
                         android:text="연매출액 : 1000원"
                         android:textAlignment="textEnd"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -167,6 +172,7 @@
                         android:layout_weight="1"
                         android:text="사람 수 : 1000명"
                         android:textAlignment="textEnd"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -190,6 +196,7 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:text="직무 내용"
+            android:textColor="@color/black"
             android:textSize="16sp" />
 
 

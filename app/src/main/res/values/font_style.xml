@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="customTextViewFontStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/suit_regular</item>
+    </style>
+
+    <style name="customButtonFontStyle" parent="TextAppearance.AppCompat.Button">
+        <item name="android:fontFamily">@font/suit_regular</item>
+    </style>
+
+    <style name="customEditTextFontStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/suit_regular</item>
+    </style>
+
+    <style name="customRadioButtonFontStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:fontFamily">@font/suit_regular</item>
+    </style>
+
+    <style name="customCheckboxFontStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:fontFamily">@font/suit_regular</item>
+    </style>
+
+
+</resources>

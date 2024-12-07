@@ -22,6 +22,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="25dp"
         android:text="설정"
+        android:textColor="@color/black"
         android:textSize="22sp"
         app:layout_constraintStart_toEndOf="@+id/imgSetting"
         app:layout_constraintTop_toTopOf="parent" />
