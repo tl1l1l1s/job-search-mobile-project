@@ -10,7 +10,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="Detail icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -45,10 +45,10 @@
 
             <ImageButton
                 android:id="@+id/btnScrap"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="3dp"
                 android:layout_weight="0"
                 android:padding="0sp"
                 android:scaleType="centerCrop"
@@ -78,6 +78,18 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <fragment
+            xmlns:map = "http://schemas.android.com/apk/res-auto"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:id = "@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            map:cameraZoom = "15"
+            map:mapType = "normal"
+            map:uiZoomControls = "true"
+            map:uiZoomGestures = "true"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
