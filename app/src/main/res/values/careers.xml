@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="careers">
+        <item>신입</item>
+        <item>경력</item>
+        <item>관계없음</item>
+    </string-array>
+</resources>

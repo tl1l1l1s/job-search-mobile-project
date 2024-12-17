@@ -13,6 +13,6 @@ interface UserDao {
     @Update
     fun updateUser(user: UserDto)
 
-    @Query("SELECT * FROM user_table WHERE _id = :id")
-    fun getUser(id : String) : UserDto
+    @Query("SELECT * FROM user_table")
+    fun getUser() : UserDto
 }

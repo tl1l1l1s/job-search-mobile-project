@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="jobTypes">
+        <item>정규직</item>
+        <item>계약직</item>
+        <item>병역특례</item>
+        <item>인턴직</item>
+        <item>아르바이트</item>
+        <item>해외취업</item>
+        <item>프리랜서</item>
+        <item>계약직 (정규직 전환가능)</item>
+        <item>인턴직 (정규직 전환가능)</item>
+    </string-array>
+</resources>
