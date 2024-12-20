@@ -21,30 +21,23 @@ import kotlinx.coroutines.withContext
 
 class MyActivity : AppCompatActivity() {
 
-    val myBinding by lazy {
+    private val myBinding by lazy {
         ActivityMyBinding.inflate(layoutInflater)
     }
 
-    val userDB: UserDatabase by lazy {
-        UserDatabase.getDatabase(this)
-    }
-
-    val userDao: UserDao by lazy {
-        userDB.userDao()
-    }
-
-    lateinit var user: UserDto;
-    var selectedStock: Int? = null;
-    var selectedJobType: Int? = null;
-    var selectedRegion = BooleanArray(Region.regionList.size) { false }
-    var selectedEducation = 0;
+    private lateinit var user: UserDto;
+    private var selectedStock: Int? = null;
+    private var selectedJobType: Int? = null;
+    private var selectedRegion = BooleanArray(Region.regionList.size) { false }
+    private var selectedEducation = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(myBinding.root)
+        val userRepo = (application as UserApplication).userRepo
 
         CoroutineScope(Dispatchers.IO).launch {
-            user = userDao.getUser()
+            user = userRepo.currentUser
 
             withContext(Dispatchers.Main) {
                 if (!user.nickname.isNullOrEmpty()) {
@@ -223,7 +216,7 @@ class MyActivity : AppCompatActivity() {
                 } else {
                     user.sr = null
                 }
-                userDao.updateUser(user)
+                userRepo.updateUser(user)
             }
             finish()
         }
