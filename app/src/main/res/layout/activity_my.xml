@@ -11,6 +11,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profile" />
@@ -64,14 +65,14 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnCoTp"
+            android:id="@+id/btnStock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
             android:background="@drawable/bordered_button"
             android:stateListAnimator="@null"
-            android:text="기업 형태를 선택해주세요."
+            android:text="기업의 상장 여부를 선택해주세요."
             android:textColor="@color/deepBlue" />
 
         <Space
@@ -80,14 +81,14 @@
             android:layout_weight="0.5"></Space>
 
         <Button
-            android:id="@+id/btnRegion"
+            android:id="@+id/btnJobType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
             android:background="@drawable/bordered_button"
             android:stateListAnimator="@null"
-            android:text="근무 지역을 선택해주세요. (최대 5개)"
+            android:text="근무형태/고용형태를 선택해주세요."
             android:textColor="@color/deepBlue" />
 
         <Space
@@ -96,14 +97,14 @@
             android:layout_weight="0.5"></Space>
 
         <Button
-            android:id="@+id/btnOccupation"
+            android:id="@+id/btnLocCd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
             android:background="@drawable/bordered_button"
             android:stateListAnimator="@null"
-            android:text="직종을 선택해주세요. (최대 5개)"
+            android:text="근무 지역을 선택해주세요. (최대 3개)"
             android:textColor="@color/deepBlue" />
 
         <Space
@@ -112,7 +113,23 @@
             android:layout_weight="0.5"></Space>
 
         <Button
-            android:id="@+id/btnEducation"
+            android:id="@+id/btnJobCd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/bordered_button"
+            android:stateListAnimator="@null"
+            android:text="직무를 선택해주세요. (최대 5개)"
+            android:textColor="@color/deepBlue" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="0.5"></Space>
+
+        <Button
+            android:id="@+id/btnEduLv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
@@ -122,28 +139,12 @@
             android:text="학력을 선택해주세요."
             android:textColor="@color/deepBlue" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_weight="0.5"></Space>
-
-        <Button
-            android:id="@+id/btnCareer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:background="@drawable/bordered_button"
-            android:stateListAnimator="@null"
-            android:text="경력을 선택해주세요."
-            android:textColor="@color/deepBlue" />
-
-        <RadioButton
-            android:id="@+id/radioBtnPref"
+        <CheckBox
+            android:id="@+id/radioBtnExcept"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:text="우대 조건(장애인) 해당"
+            android:text="헤드헌팅/파견업체 공고 제외"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -163,6 +164,7 @@
             android:id="@+id/btnSave"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="@color/white"
             android:padding="0sp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/save" />
@@ -176,8 +178,10 @@
             android:id="@+id/btnCancel"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="@color/white"
             android:padding="0sp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/cancel" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

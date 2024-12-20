@@ -70,6 +70,11 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
     implementation ("androidx.lifecycle:lifecycle-common-java8:$lifecycle_version")
 
+    // retrofit
+    val retrofit_version = "2.11.0"
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
+
     // GoogleMap
     implementation ("com.google.android.gms:play-services-maps:19.0.0")
 }

@@ -13,5 +13,5 @@ data class UserDto (
     var locCd : String?,
     var jobCd : String?,
     var eduLv : Int?,
-    var isDirecthire : Boolean?,
+    var sr : String?,
 )
