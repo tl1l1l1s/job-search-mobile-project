@@ -1,14 +1,14 @@
 package com.appproject.project_jobsearch.data
 
-
 data class RegionData(
-    val id: String,
+    val id: String?,
     val name: String,
 )
 
 class Region {
     companion object {
         val regionList: List<RegionData> = listOf(
+            RegionData(null, "전체"),
             RegionData("101000", "서울"),
             RegionData("102000", "경기"),
             RegionData("103000", "광주"),

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="jobTypes">
+        <item>전체</item>
         <item>정규직</item>
         <item>계약직</item>
         <item>병역특례</item>
