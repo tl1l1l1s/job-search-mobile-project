@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/imgDetail"
@@ -18,9 +19,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="550dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,18 +31,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp"
             android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
+            android:paddingLeft="6dp"
+            android:paddingRight="2dp">
 
             <TextView
                 android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:text="회사 공고 제목"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"></Space>
 
             <ImageButton
                 android:id="@+id/btnScrap"
@@ -50,46 +55,47 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="3dp"
                 android:layout_weight="0"
+                android:background="@color/white"
+                android:baselineAlignBottom="false"
                 android:padding="0sp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/scrap" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tvDday"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="D - 6"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/deepBlue"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvReceiptCloseDt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="2024. 11. 08. 18:00"
-                    android:textAlignment="textEnd" />
-            </LinearLayout>
-
         </LinearLayout>
 
-        <fragment
-            xmlns:map = "http://schemas.android.com/apk/res-auto"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="D - 6"
+                android:textAlignment="textEnd"
+                android:textColor="@color/deepBlue"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvExpiration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2024. 11. 08. 18:00"
+                android:textAlignment="textEnd" />
+        </LinearLayout>
+
+        <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:id = "@+id/map"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            map:cameraZoom = "15"
-            map:mapType = "normal"
-            map:uiZoomControls = "true"
-            map:uiZoomGestures = "true"
-            />
+            map:cameraZoom="15"
+            map:mapType="normal"
+            map:uiZoomControls="true"
+            map:uiZoomGestures="true" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -100,7 +106,7 @@
             android:paddingRight="8dp">
 
             <LinearLayout
-                android:layout_width="180dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -118,12 +124,12 @@
                     android:layout_weight="1"></Space>
 
                 <TextView
-                    android:id="@+id/tvIndTpNm"
+                    android:id="@+id/tvJobCd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="업종"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -134,36 +140,9 @@
                 android:layout_weight="1"></Space>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/imgCoin"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        app:srcCompat="@drawable/coin" />
-
-                    <TextView
-                        android:id="@+id/tvYrSalesAmt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="연매출액 : 1000원"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="7dp"
-                    android:layout_weight="1"></Space>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -177,16 +156,44 @@
                         app:srcCompat="@drawable/people" />
 
                     <TextView
-                        android:id="@+id/tvTotPsncnt"
+                        android:id="@+id/tvJobType"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="사람 수 : 1000명"
+                        android:text="정규직"
                         android:textAlignment="textEnd"
                         android:textColor="@color/black"
-                        android:textSize="14sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="7dp"
+                    android:layout_weight="1"></Space>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgCoin"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:srcCompat="@drawable/coin" />
+
+                    <TextView
+                        android:id="@+id/tvSalary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="면접 후 결정"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
@@ -202,12 +209,12 @@
             android:background="#000000" />
 
         <TextView
-            android:id="@+id/tvJobCont"
+            android:id="@+id/tvKeyword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:text="직무 내용"
+            android:text="직무 키워드"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -218,7 +225,7 @@
         android:id="@+id/buttonLayout"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:baselineAligned="true"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -231,6 +238,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="0"
+            android:background="@color/white"
             android:padding="0sp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/internet" />
@@ -245,6 +253,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="0"
+            android:background="@color/white"
             android:padding="0sp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/share" />
@@ -259,6 +268,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="0"
+            android:background="@color/white"
             android:padding="0sp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/cancel" />

@@ -11,6 +11,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/settings" />
@@ -47,6 +48,7 @@
                 android:id="@+id/imgAlarm"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:background="@color/white"
                 app:srcCompat="@drawable/notification" />
 
             <Switch
@@ -88,7 +90,7 @@
     <LinearLayout
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:baselineAligned="true"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -99,6 +101,7 @@
             android:id="@+id/btnSave"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="@color/white"
             android:padding="0sp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/save" />
@@ -112,6 +115,7 @@
             android:id="@+id/btnCancel"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="@color/white"
             android:padding="0sp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/cancel" />

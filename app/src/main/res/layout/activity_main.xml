@@ -23,7 +23,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -45,7 +45,7 @@
             android:paddingTop="10dp"
             android:paddingRight="18dp"
             android:paddingBottom="10dp"
-            android:text="안녕하세요, 모바일응용님! 좋은 하루입니다."
+            android:text="안녕하세요. 좋은 하루입니다."
             android:textColor="@color/black" />
 
         <Space
@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:text="최근 맞춤형 채용 공고"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -78,11 +78,11 @@
         app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/rvItems"
         android:layout_width="0dp"
-        android:layout_height="400dp"
+        android:layout_height="470dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +91,7 @@
     <LinearLayout
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:baselineAligned="true"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -102,6 +102,7 @@
             android:id="@+id/btnToProfile"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="@color/white"
             android:padding="0sp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/profile" />
@@ -115,6 +116,7 @@
             android:id="@+id/btnToScrap"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="@color/white"
             android:paddingStart="0dp"
             android:paddingLeft="0dp"
             android:paddingTop="3dp"
@@ -133,6 +135,7 @@
             android:id="@+id/btnToSetting"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="@color/white"
             android:padding="0sp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/settings" />
