@@ -54,7 +54,10 @@ class SettingActivity : AppCompatActivity() {
 
 
         settingBinding.btnSave.setOnClickListener {
-            // 설정 정보 저장
+            if(!settingBinding.switchAlarm.isChecked) {
+                // TODO 알림취소좀 ㅎㅎ
+            }
+            // TOOD 그리고 시간맞춰서 알람오도록수정하고끄기!
         }
 
         settingBinding.btnCancel.setOnClickListener {
@@ -69,7 +72,6 @@ class SettingActivity : AppCompatActivity() {
 
             val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(mChannel)
-            Toast.makeText(applicationContext, "${notificationManager.areNotificationsEnabled()}", Toast.LENGTH_SHORT).show()
         }
     }
 

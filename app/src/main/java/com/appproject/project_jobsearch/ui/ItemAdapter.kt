@@ -9,8 +9,6 @@ import com.appproject.project_jobsearch.data.network.Job
 import com.appproject.project_jobsearch.data.network.Jobs
 
 class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemHolder>() {
-    // TODO 그뭐냐.. 스크랩버튼생기면 스크랩할말 추가해야함
-
     var items : List<Job>? = null
 
     override fun getItemCount(): Int {
@@ -27,7 +25,7 @@ class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemHolder>() {
                 (items?.get(position) as Job).company?.companyDetail?.companyName.toString()
 
             holder.itemBinding.tvItemJobCd.text = "(${(items?.get(position) as Job)?.position?.jobCode?.jobCdName?.split(",")!!.get(0)}...)"
-            if((items?.get(position) as Job)?.closeType?.code!! == "1") {
+            if((items?.get(position) as Job)?.closeType?.code == "1") {
                 holder.itemBinding.tvItemDay.text = (items?.get(position) as Job).expiration?.subSequence(0, 10)
             } else {
                 holder.itemBinding.tvItemDay.text = (items?.get(position) as Job)?.closeType?.closeTypeName + " 마감"

@@ -3,6 +3,7 @@ package com.appproject.project_jobsearch
 import android.app.Application
 import com.appproject.project_jobsearch.data.JobsRepository
 import com.appproject.project_jobsearch.data.ScrapDatabase
+import com.appproject.project_jobsearch.data.ScrapRepository
 import com.appproject.project_jobsearch.data.UserDatabase
 import com.appproject.project_jobsearch.data.UserRepository
 import com.appproject.project_jobsearch.data.network.JobsService
@@ -28,5 +29,7 @@ class ProjectApplication : Application() {
         ScrapDatabase.getDatabase(this)
     }
 
-    //TODO scrapRepository
+    val scrapRepo by lazy {
+        ScrapRepository(scrapDatabase.scrapDao())
+    }
 }
