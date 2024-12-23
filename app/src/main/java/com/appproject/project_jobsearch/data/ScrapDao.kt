@@ -10,9 +10,13 @@ interface ScrapDao {
     @Insert
     fun insertScrap(scrap: ScrapDto)
 
-    @Delete
-    fun deleteScrap(scrap: ScrapDto)
+    @Query("DELETE FROM scrap_table WHERE employmentId=:employmentId")
+    fun deleteScrap(employmentId : String)
+
+    @Query("SELECT * from scrap_table WHERE employmentId=:employmentId")
+    fun findScrap(employmentId : String) : ScrapDto?
 
     @Query("SELECT * FROM scrap_table")
     fun getAllScrap() : List<ScrapDto>
+
 }
