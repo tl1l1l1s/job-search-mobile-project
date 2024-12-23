@@ -8,9 +8,8 @@
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
 
-
     <application
-        android:name=".UserApplication"
+        android:name=".ProjectApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -20,6 +19,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectJobSearch"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/GOOGLE_MAP_API_KEY" />
+
+        <receiver
+            android:name=".AlarmBroadcastReceiver"
+            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -32,10 +40,6 @@
         <activity
             android:name=".MyActivity"
             android:exported="true">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
-                />
         </activity>
 
         <activity
