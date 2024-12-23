@@ -27,8 +27,24 @@
         app:layout_constraintStart_toEndOf="@+id/imgScrap"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tvNoScrap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/item_background"
+        android:padding="20dp"
+        android:text="스크랩한 공고가 없습니다!"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgScrap" />
+
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView2"
+        android:id="@+id/rvScraps"
         android:layout_width="0dp"
         android:layout_height="510dp"
         android:layout_marginStart="20dp"
