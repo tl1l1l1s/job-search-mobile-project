@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -8,12 +10,30 @@ android {
     namespace = "com.appproject.project_jobsearch"
     compileSdk = 34
 
+    val localProperties = Properties()
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        localPropertiesFile.inputStream().use { localProperties.load(it) }
+    }
+
+    val GOOGLE_MAP_API_KEY = localProperties.getProperty("GOOGLE_MAP_API_KEY") ?: ""
+    val SARAMIN_API_KEY = localProperties.getProperty("SARAMIN_API_KEY") ?: ""
+
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.appproject.project_jobsearch"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        buildConfigField("String", "GOOGLE_MAP_API_KEY", "\"$GOOGLE_MAP_API_KEY\"")
+        resValue("string", "GOOGLE_MAP_API_KEY", GOOGLE_MAP_API_KEY)
+        buildConfigField("String", "SARAMIN_API_KEY", "\"$SARAMIN_API_KEY\"")
+        resValue("string", "SARAMIN_API_KEY", SARAMIN_API_KEY)
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
