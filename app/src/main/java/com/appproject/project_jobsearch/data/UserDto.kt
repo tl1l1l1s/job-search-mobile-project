@@ -5,8 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "user_table")
 data class UserDto (
-    @PrimaryKey (autoGenerate = true)
-    val _id : Int,
+    @PrimaryKey(autoGenerate = false)
+    val id : Int,
     var nickname : String?,
     var stock : String?,
     var jobType : String?,
