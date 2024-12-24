@@ -2,15 +2,11 @@ package com.appproject.project_jobsearch.ui
 
 import android.content.Context
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.appproject.project_jobsearch.data.JobCd
 import com.appproject.project_jobsearch.data.JobCdData
 import com.appproject.project_jobsearch.databinding.JobcdDialogBinding
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class JobCdDialog(context: Context, private val onSubmitListener: (List<JobCdData>) -> Unit) : BottomSheetDialog(context) {
