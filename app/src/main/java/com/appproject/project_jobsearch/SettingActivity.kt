@@ -5,7 +5,9 @@ import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.icu.util.Calendar
 import android.os.Build
@@ -26,45 +28,46 @@ class SettingActivity : AppCompatActivity() {
         getSystemService(ALARM_SERVICE) as AlarmManager
     }
 
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var pendingIntent : PendingIntent;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(settingBinding.root)
 
+        sharedPreferences = getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
+
+        val isAlarmEnabled = sharedPreferences.getBoolean("alarm_enabled", true)
+        settingBinding.switchAlarm.isChecked = isAlarmEnabled
+
         checkPermission()
         createNotificationChannel()
-
         val calendar = Calendar.getInstance().apply {
-            timeInMillis = System.currentTimeMillis()
             set(Calendar.HOUR_OF_DAY, 9)
-            set(Calendar.MINUTE, 0)
-
-            if (timeInMillis < System.currentTimeMillis()) {
-                add(Calendar.DAY_OF_MONTH, 1)
-            }
+            set(Calendar.MINUTE, 8)
         }
         val alarmIntent = Intent(this, AlarmBroadcastReceiver::class.java)
-        val pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_IMMUTABLE)
-
-        alarmManager?.setRepeating(
-            AlarmManager.RTC_WAKEUP,
-            calendar.timeInMillis,
-            AlarmManager.INTERVAL_DAY,
-            pendingIntent
-        )
-
+        pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_IMMUTABLE)
 
         settingBinding.btnSave.setOnClickListener {
             if(!settingBinding.switchAlarm.isChecked) {
-                // TODO 알림취소좀 ㅎㅎ
+                alarmManager?.cancel(pendingIntent)
+            } else {
+                alarmManager?.setRepeating(
+                    AlarmManager.RTC_WAKEUP,
+                    calendar.timeInMillis,
+                    AlarmManager.INTERVAL_DAY,
+                    pendingIntent
+                )
             }
-            // TOOD 그리고 시간맞춰서 알람오도록수정하고끄기!
+            sharedPreferences.edit().putBoolean("alarm_enabled", settingBinding.switchAlarm.isChecked).apply()
+            finish()
         }
 
         settingBinding.btnCancel.setOnClickListener {
             finish()
         }
     }
-
 
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -100,10 +103,10 @@ class SettingActivity : AppCompatActivity() {
         when (requestCode) {
             100 -> {
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    Toast.makeText(applicationContext, "사용권한 승인, 버튼 다시 클릭!", Toast.LENGTH_SHORT)
+                    Toast.makeText(applicationContext, "권한이 승인되었습니다.", Toast.LENGTH_SHORT)
                         .show()
                 } else {
-                    Toast.makeText(applicationContext, "권한 필요", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "권한이 거절되었습니다. 알림을 받아보시길 원한다면 권한을 추가해주세요.", Toast.LENGTH_SHORT).show()
                 }
                 return
             }
