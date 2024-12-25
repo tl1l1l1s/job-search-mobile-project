@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
             jobsViewModel.getList(user!!)
 
             withContext(Dispatchers.Main) {
-                mainBinding.tvChat.text = "안녕하세요, ${user!!.nickname}님! 좋은 하루입니다."
+                mainBinding.tvChat.text = "안녕하세요, ${user?.nickname ?: "사용자"}님! 좋은 하루입니다."
             }
 
         }
